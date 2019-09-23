@@ -1,21 +1,15 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
-	"lhx-github/go_web_demo/handler"
+	"fmt"
+	"lhx-github/go_web_demo/dao"
 )
 
 func main() {
 
-	// 创建带有默认中间件的路由:
-	// 日志与恢复中间件
-	router := gin.Default()
-	//创建不带中间件的路由：
-	//r := gin.New()
+	dao.InitDb()
+	if err := InstanceRoutine().Run(":8080"); err != nil {
+		fmt.Println("xxx")
+	}
 
-
-	router.GET("/someGet", handler.Getting)
-	router.GET("/someTest", handler.Test)
-
-	router.Run(":8080")
 }
