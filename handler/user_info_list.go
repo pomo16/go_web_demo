@@ -52,9 +52,9 @@ func packUserInfoList(c *gin.Context, context model.IUserInfoListContext) map[st
 	listMap := make([]map[string]interface{}, len(userInfoList))
 	for key, val := range userInfoList {
 		listMap[key] = map[string]interface{}{
-			"user_id": val.UserId,
+			"user_id":   val.UserId,
 			"user_name": val.UserName,
-			"user_age": val.Age,
+			"user_age":  val.Age,
 		}
 	}
 

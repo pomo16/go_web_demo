@@ -7,7 +7,7 @@ import (
 
 var urlMaps = map[string]gin.HandlerFunc{
 	"/ping": handler.Ping,
-	"/usl": handler.UserInfoList,
+	"/usl":  handler.UserInfoList,
 }
 
 func InstanceRoutine() *gin.Engine {

@@ -39,9 +39,9 @@ func (loader *UserInfoListLoader) Process(ctx *gin.Context, runCtx model.IContex
 	}
 
 	userInfoParams := &model.UserInfoParams{
-		UserId:   inputParameter.Id,
-		UserName: inputParameter.Name,
-		UserAge:  inputParameter.Age,
+		UserId:    inputParameter.Id,
+		UserName:  inputParameter.Name,
+		UserAge:   inputParameter.Age,
 		QueryType: inputParameter.QueryType,
 	}
 

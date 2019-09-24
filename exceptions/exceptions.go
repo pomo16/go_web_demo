@@ -7,13 +7,13 @@ type ErrProcessor error
 
 //用错误类型标识异常种类
 var (
-	ErrResultEmpty      = errors.New("result empty")
-	ErrRequestParams    = errors.New("illegal request parameters")
-	ErrProcessPanic     = errors.New("processor panic")
-	ErrTypeAssert       = errors.New("type assert err")
-	ErrUnknownType      = errors.New("unknown type error")
-	ErrDBStart        = errors.New("start db error")
-	ErrProcessFailed    = errors.New("processor failed")
+	ErrResultEmpty   = errors.New("result empty")
+	ErrRequestParams = errors.New("illegal request parameters")
+	ErrProcessPanic  = errors.New("processor panic")
+	ErrTypeAssert    = errors.New("type assert err")
+	ErrUnknownType   = errors.New("unknown type error")
+	ErrDBStart       = errors.New("start db error")
+	ErrProcessFailed = errors.New("processor failed")
 )
 
 //返回给前端的业务错误码err_no

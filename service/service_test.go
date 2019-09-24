@@ -11,7 +11,7 @@ import (
 func TestGetUserInfoList(t *testing.T) {
 	dao.InitDb()
 	params := &model.UserInfoParams{
-		UserName: "pomo2",
+		UserName:  "pomo2",
 		QueryType: consts.NameType,
 	}
 

@@ -9,9 +9,9 @@ import (
 
 func ParseInputParameter(ctx *gin.Context) *model.InputParameter {
 	parameter := &model.InputParameter{
-		Id: utils.GetParamString(ctx, "id", ""),
-		Name: utils.GetParamString(ctx, "name", ""),
-		Age: utils.GetParamInt32(ctx, "age", 0),
+		Id:        utils.GetParamString(ctx, "id", ""),
+		Name:      utils.GetParamString(ctx, "name", ""),
+		Age:       utils.GetParamInt32(ctx, "age", 0),
 		QueryType: consts.QueryType(utils.GetParamInt16(ctx, "query_type", 0)),
 	}
 

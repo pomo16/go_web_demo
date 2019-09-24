@@ -25,5 +25,3 @@ func (infoCtx *UserInfoListContext) GetUserInfoList() []*UserInfo {
 	}
 	return []*UserInfo{}
 }
-
-

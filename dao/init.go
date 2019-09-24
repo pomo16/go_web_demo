@@ -17,6 +17,3 @@ func InitDb() error {
 		return exceptions.ErrDBStart
 	}
 }
-
-
-

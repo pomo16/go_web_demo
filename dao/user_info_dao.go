@@ -6,7 +6,12 @@ import (
 
 func GetUserInfoById(userId string) (*model.UserInfo, error) {
 	var userInfo model.UserInfo
-	err := db.Table("user_info").Where("id = ?", userId).Find(&userInfo).Error
+	rows, err := db.Table("user_info").Where("id = ?", userId).Find(&userInfo).Rows()
+	defer func() {
+		if rows != nil {
+			rows.Close()
+		}
+	}()
 	if err != nil {
 		return nil, err
 	} else {
@@ -17,6 +22,11 @@ func GetUserInfoById(userId string) (*model.UserInfo, error) {
 func GetUserInfoByName(userName string) ([]*model.UserInfo, error) {
 	var userInfos []*model.UserInfo
 	rows, err := db.Raw("SELECT * FROM goweb.user_info WHERE name = ?", userName).Rows()
+	defer func() {
+		if rows != nil {
+			rows.Close()
+		}
+	}()
 	if err != nil {
 		return nil, err
 	}
@@ -31,6 +41,11 @@ func GetUserInfoByName(userName string) ([]*model.UserInfo, error) {
 func GetUserInfoByAge(userAge int32) ([]*model.UserInfo, error) {
 	var userInfos []*model.UserInfo
 	rows, err := db.Raw("SELECT * FROM goweb.user_info WHERE age = ?", userAge).Rows()
+	defer func() {
+		if rows != nil {
+			rows.Close()
+		}
+	}()
 	if err != nil {
 		return nil, err
 	}
