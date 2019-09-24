@@ -7,6 +7,7 @@ import (
 
 func main() {
 
+
 	dao.InitDb()
 	if err := InstanceRoutine().Run(":8080"); err != nil {
 		fmt.Println("xxx")

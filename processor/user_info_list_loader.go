@@ -46,7 +46,7 @@ func (loader *UserInfoListLoader) Process(ctx *gin.Context, runCtx model.IContex
 	}
 
 	userInfoList, err := service.GetUserInfoList(userInfoParams)
-	logrus.Error(len(userInfoList))
+
 	if userInfoList != nil {
 		listCtx.SetUserInfoList(userInfoList)
 		return nil

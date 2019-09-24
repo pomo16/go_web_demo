@@ -12,9 +12,7 @@ func GetUserInfoList(params *model.UserInfoParams) ([]*model.UserInfo, error) {
 	var err error
 	switch params.QueryType {
 	case consts.IdType:
-		var res *model.UserInfo
-		res, err = dao.GetUserInfoById(params.UserId)
-		userInfoList = append(userInfoList, res)
+		userInfoList, err = dao.GetUserInfoById(params.UserId)
 	case consts.NameType:
 		userInfoList, err = dao.GetUserInfoByName(params.UserName)
 	case consts.AgeType:

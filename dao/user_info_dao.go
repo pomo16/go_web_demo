@@ -4,18 +4,15 @@ import (
 	"lhx-github/go_web_demo/model"
 )
 
-func GetUserInfoById(userId string) (*model.UserInfo, error) {
+// 统一接口使用数组类型返回
+func GetUserInfoById(userId string) ([]*model.UserInfo, error) {
 	var userInfo model.UserInfo
-	rows, err := db.Table("user_info").Where("id = ?", userId).Find(&userInfo).Rows()
-	defer func() {
-		if rows != nil {
-			rows.Close()
-		}
-	}()
+	var userInfos []*model.UserInfo
+	err := db.Table("user_info").Where("id = ?", userId).Find(&userInfo).Error
 	if err != nil {
 		return nil, err
 	} else {
-		return &userInfo, nil
+		return append(userInfos, &userInfo), nil
 	}
 }
 
