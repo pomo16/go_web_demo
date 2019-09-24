@@ -2,9 +2,7 @@
 
 RUN_NAME="go_web_demo"
 
-mkdir -p output
-
-chmod 755 output
+mkdir output
 
 export GO111MODULE=on
 

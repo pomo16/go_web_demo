@@ -6,7 +6,7 @@ run:
 
 build:
 	gofmt -w .
-	chmod 755 build.sh
+	chmod +x build.sh
 	sh build.sh
 
 clean:
